@@ -25,7 +25,7 @@ class CreateReservationsTable extends Migration
 
             // Associate Reference -- Reserved To
             $table->bigInteger('reserved_to')->nullable();
-            $table->bigInteger('reserved_to')->references('id')->on('associates');
+            $table->foreign('reserved_to')->references('id')->on('associates');
 
             // User Reference -- Reserved By
             $table->bigInteger('reserved_by');

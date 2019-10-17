@@ -21,7 +21,7 @@ class CreateAttractionsTable extends Migration
 
             // Attraction Type Reference
             $table->integer('attraction_type_id');
-            $table->foreign('attraction_type_id')->references('id')->on('attractions_types');
+            $table->foreign('attraction_type_id')->references('id')->on('attraction_types');
 
             $table->timestamps();
         });
