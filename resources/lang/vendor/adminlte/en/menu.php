@@ -16,4 +16,7 @@ return [
     'Important'                     => 'Important',
     'Warning'                       => 'Warning',
     'Information'                   => 'Information',
+    'ticket_types'                  => 'Ticket Types',
+    'place_types'                   => 'Place Types',
+    'attraction_types'              => 'Attraction Types',
 ];
