@@ -139,79 +139,78 @@ return [
             'icon'        => 'fas fa-fw fa-columns'
         ],
         [
-            'text' => 'Maintenance',
+            'text'  => 'Users',
+            'url'   => 'users',
+            'icon'  => 'fas fa-fw fa-users-cog',
+            'can'   => 'manage-users',
+        ],
+        [
+            'text'  => 'Associates',
+            'url'   => 'associates',
+            'icon'  => 'fas fa-fw fa-user',
+            // 'can'   => 'list-associates',
+        ],
+        [
+            'text'  => 'Dependents',
+            'url'   => 'dependents',
+            'icon'  => 'fas fa-fw fa-user-friends',
+            // 'can'   => 'list-dependents',
+        ],
+        [
+            'text' => 'Attractions',
             'url' => '#',
-            'icon' => 'fas fa-fw fa-cogs',
+            'icon' => 'fas fa-fw fa-fire-alt',
             'submenu' => [
                 [
-                    'text'  => 'Associates',
-                    'url'   => 'associates',
-                    'icon'  => 'fas fa-fw fa-user',
-                    // 'can'   => 'list-associates',
-                ],
-                [
-                    'text'  => 'Dependents',
-                    'url'   => 'dependents',
-                    'icon'  => 'fas fa-fw fa-user-friends',
-                    // 'can'   => 'list-dependents',
-                ],
-                [
                     'text' => 'Attractions',
-                    'url' => '#',
-                    'icon' => 'fas fa-fw fa-fire-alt',
-                    'submenu' => [
-                        [
-                            'text' => 'Attractions',
-                            'url' => 'attractions',
-                            'icon' => 'fas fa-fw fa-fire',
-                            // 'can' => 'list-attractions',
-                        ],
-                        [
-                            'text' => 'attraction_types',
-                            'url' => 'attraction_types',
-                            'icon' => 'fas fa-fw fa-tags',
-                            // 'can' => 'list-attraction-types',
-                        ],
-                    ]
+                    'url' => 'attractions',
+                    'icon' => 'fas fa-fw fa-fire',
+                    // 'can' => 'list-attractions',
                 ],
+                [
+                    'text' => 'attraction_types',
+                    'url' => 'attraction_types',
+                    'icon' => 'fas fa-fw fa-tags',
+                    // 'can' => 'list-attraction-types',
+                ],
+            ]
+        ],
+        [
+            'text' => 'Places',
+            'url' => '#',
+            'icon' => 'fas fa-fw fa-globe-americas',
+            'submenu' => [
                 [
                     'text' => 'Places',
-                    'url' => '#',
-                    'icon' => 'fas fa-fw fa-globe-americas',
-                    'submenu' => [
-                        [
-                            'text' => 'Places',
-                            'url' => 'places',
-                            'icon' => 'fas fa-fw fa-map-marked-alt',
-                            // 'can' => 'list-places',
-                        ],
-                        [
-                            'text' => 'place_types',
-                            'url' => 'place_types',
-                            'icon' => 'fas fa-fw fa-tags',
-                            // 'can' => 'list-place-types',
-                        ],
-                    ]
+                    'url' => 'places',
+                    'icon' => 'fas fa-fw fa-map-marked-alt',
+                    // 'can' => 'list-places',
                 ],
                 [
-                    'text' => 'Reservations',
-                    'url' => 'reservations',
-                    'icon' => 'fas fa-fw fa-clipboard-list',
-                    // 'can' => 'list-reservations',
+                    'text' => 'place_types',
+                    'url' => 'place_types',
+                    'icon' => 'fas fa-fw fa-tags',
+                    // 'can' => 'list-place-types',
                 ],
-                [
-                    'text' => 'Events',
-                    'url' => 'events',
-                    'icon' => 'far fa-fw fa-calendar-check',
-                    // 'can' => 'list-events',
-                ],
-                [
-                    'text' => 'ticket_types',
-                    'url' => 'ticket_types',
-                    'icon' => 'fas fa-fw fa-ticket-alt',
-                    // 'can' => 'list-ticket-types',
-                ],
-            ],
+            ]
+        ],
+        [
+            'text' => 'Reservations',
+            'url' => 'reservations',
+            'icon' => 'fas fa-fw fa-clipboard-list',
+            // 'can' => 'list-reservations',
+        ],
+        [
+            'text' => 'Events',
+            'url' => 'events',
+            'icon' => 'far fa-fw fa-calendar-check',
+            // 'can' => 'list-events',
+        ],
+        [
+            'text' => 'ticket_types',
+            'url' => 'ticket_types',
+            'icon' => 'fas fa-fw fa-ticket-alt',
+            // 'can' => 'list-ticket-types',
         ],
 
         // Account related links
