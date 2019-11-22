@@ -63,7 +63,7 @@ class AssociatesController extends Controller
 	/**
 	 * Updates the Associate and redirects to index route
 	 * 
-	 * @param HabitoRequest $request Request
+	 * @param AssociateRequest $request Request
 	 * @param mixed $id The associate id
 	 */
 	public function update(AssociateRequest $request, $id) {
