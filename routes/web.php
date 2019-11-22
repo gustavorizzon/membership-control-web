@@ -23,6 +23,16 @@ Route::group(['middleware' => 'auth'], function () {
     // Home Page
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+    // Users
+    Route::group(['middleware' => 'can:manage-users', 'prefix' => 'users', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('',              ['as' => 'users',          'uses' => 'UsersController@index']);
+        Route::get('/create',       ['as' => 'users.create',   'uses' => 'UsersController@create']);
+        Route::post('/store',       ['as' => 'users.store',    'uses' => 'UsersController@store']);
+        Route::get('/{id}/destroy', ['as' => 'users.destroy',  'uses' => 'UsersController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'users.edit',     'uses' => 'UsersController@edit']);
+        Route::put('/{id}/update',  ['as' => 'users.update',   'uses' => 'UsersController@update']);
+    });
+
     // Associates
     Route::group(['prefix' => 'associates', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'associates',          'uses' => 'AssociatesController@index']);
