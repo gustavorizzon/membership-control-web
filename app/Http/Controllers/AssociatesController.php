@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Maintenance;
+namespace App\Http\Controllers;
 
 use App\Associate;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\AssociateRequest;
 
 class AssociatesController extends Controller

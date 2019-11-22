@@ -25,11 +25,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Associates
     Route::group(['prefix' => 'associates', 'where' => ['id' => '[0-9]+']], function () {
-        Route::any('',              ['as' => 'associates',          'uses' => 'Maintenance\AssociatesController@index']);
-        Route::get('/create',       ['as' => 'associates.create',   'uses' => 'Maintenance\AssociatesController@create']);
-        Route::post('/store',       ['as' => 'associates.store',    'uses' => 'Maintenance\AssociatesController@store']);
-        Route::get('/{id}/destroy', ['as' => 'associates.destroy', 'uses' => 'Maintenance\AssociatesController@destroy']);
-        Route::get('/{id}/edit',    ['as' => 'associates.edit',     'uses' => 'Maintenance\AssociatesController@edit']);
-        Route::put('/{id}/update',  ['as' => 'associates.update',   'uses' => 'Maintenance\AssociatesController@update']);
+        Route::any('',              ['as' => 'associates',          'uses' => 'AssociatesController@index']);
+        Route::get('/create',       ['as' => 'associates.create',   'uses' => 'AssociatesController@create']);
+        Route::post('/store',       ['as' => 'associates.store',    'uses' => 'AssociatesController@store']);
+        Route::get('/{id}/destroy', ['as' => 'associates.destroy',  'uses' => 'AssociatesController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'associates.edit',     'uses' => 'AssociatesController@edit']);
+        Route::put('/{id}/update',  ['as' => 'associates.update',   'uses' => 'AssociatesController@update']);
     });
 });
