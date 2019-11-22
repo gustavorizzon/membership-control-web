@@ -28,18 +28,13 @@
 									<li class="active">
 										<a href="{{ url('/') }}">{{ __('Home') }}</a>
 									</li>
-									@auth
-										<li>
+									<li>
+										@auth
 											<a href="{{ url('/dashboard') }}">{{ __('Dashboard') }}</a>
-										</li>
-									@else
-										<li>
+										@else
 											<a href="{{ route('login') }}">{{ __('Login') }}</a>
-										</li>
-										<li>
-											<a href="{{ route('register') }}">{{ __('Register') }}</a>
-										</li>
-									@endauth
+										@endauth
+									</li>
 								</ul>
 							</nav>
 						</div>
