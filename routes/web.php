@@ -13,7 +13,11 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false
+]);
 
 Route::group(['middleware' => 'auth'], function () {
     // Home Page
@@ -21,30 +25,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Associates
     Route::group(['prefix' => 'associates', 'where' => ['id' => '[0-9]+']], function () {
-        Route::any('', ['as' => 'associates', 'uses' => 'AssociatesController@index']);
+        Route::any('',              ['as' => 'associates',          'uses' => 'Maintenance\AssociatesController@index']);
+        Route::get('/create',       ['as' => 'associates.create',   'uses' => 'Maintenance\AssociatesController@create']);
+        Route::post('/store',       ['as' => 'associates.store',    'uses' => 'Maintenance\AssociatesController@store']);
+        Route::get('/{id}/destroy', ['as' => 'associates.destroy', 'uses' => 'Maintenance\AssociatesController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'associates.edit',     'uses' => 'Maintenance\AssociatesController@edit']);
+        Route::put('/{id}/update',  ['as' => 'associates.update',   'uses' => 'Maintenance\AssociatesController@update']);
     });
-    
-    // // Rotas do model Habito
-    // Route::group(["prefix" => "habitos", "where" => ["id" => "[0-9]+"]], function () {
-    //     Route::any("",              ['as' => 'habitos',           'uses' => "HabitosController@index"]);
-    //     Route::get("/relatorio",    ['as' => 'habitos.relatorio', 'uses' => "HabitosController@geraPdf"]);
-    //     Route::get("/create",       ['as' => 'habitos.create',    'uses' => "HabitosController@create"]);
-    //     Route::post("/store",       ['as' => 'habitos.store',     'uses' => "HabitosController@store"]);
-    //     Route::get("/{id}/destroy", ['as' => 'habitos.destroy',   'uses' => "HabitosController@destroy"]);
-    //     Route::get("/{id}/edit",    ['as' => 'habitos.edit',      'uses' => "HabitosController@edit"]);
-    //     Route::put("/{id}/update",  ['as' => 'habitos.update',    'uses' => "HabitosController@update"]);
-    // });
-
-    // // Rotas do model Historico
-    // Route::group(["prefix" => "historicos", "where" => ["id" => "[0-9]+"]], function () {
-    //     Route::get("",              ['as' => 'historicos',         'uses' => "HistoricoController@index"]);
-    //     Route::get("/create",       ['as' => 'historicos.create',  'uses' => "HistoricoController@create"]);
-    //     Route::post("/store",       ['as' => 'historicos.store',   'uses' => "HistoricoController@store"]);
-    //     Route::get("/{id}/destroy", ['as' => 'historicos.destroy', 'uses' => "HistoricoController@destroy"]);
-    //     Route::get("/{id}/edit",    ['as' => 'historicos.edit',    'uses' => "HistoricoController@edit"]);
-    //     Route::put("/{id}/update",  ['as' => 'historicos.update',  'uses' => "HistoricoController@update"]);
-
-    //     Route::get('createmaster', ['as' => 'historicos.createmaster', 'uses' => 'HistoricoController@createMaster']);
-    //     Route::post('masterdetail', ['as' => 'historicos.masterdetail', 'uses' => 'HistoricoController@masterDetail']);
-    // });
 });
