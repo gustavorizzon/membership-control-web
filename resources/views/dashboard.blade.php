@@ -3,7 +3,7 @@
 @section('title', 'Dashboard - MembershipCTL')
 
 @section('content_header')
-    <h1>{{ __('Dashboard') }} <small>{{ __('Version') }} 2.0</small></h1>
+    <h1>{{ __('MCTL Dashboard') }} <small>{{ __('Version') }} 1.0</small></h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
                 <span class="info-box-icon bg-aqua"><i class="fas fa-fw fa-users"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">{{ __('Associates') }}</span>
+                    <span class="info-box-text">{{ __('Active Associates') }}</span>
                     <span class="info-box-number">{{ $associatesCount }}</span>
                 </div>
             </div>
