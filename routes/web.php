@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/{id}/update',  ['as' => 'associates.update',   'uses' => 'AssociatesController@update']);
     });
 
-    // TicketTypes
+    // AttractionTypes
     Route::group(['prefix' => 'attraction_types', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'attraction_types',          'uses' => 'AttractionTypesController@index']);
         Route::get('/create',       ['as' => 'attraction_types.create',   'uses' => 'AttractionTypesController@create']);
@@ -51,6 +51,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/{id}/destroy', ['as' => 'attraction_types.destroy',  'uses' => 'AttractionTypesController@destroy']);
         Route::get('/{id}/edit',    ['as' => 'attraction_types.edit',     'uses' => 'AttractionTypesController@edit']);
         Route::put('/{id}/update',  ['as' => 'attraction_types.update',   'uses' => 'AttractionTypesController@update']);
+    });
+
+    // PlaceTypes
+    Route::group(['prefix' => 'place_types', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('',              ['as' => 'place_types',          'uses' => 'PlaceTypesController@index']);
+        Route::get('/create',       ['as' => 'place_types.create',   'uses' => 'PlaceTypesController@create']);
+        Route::post('/store',       ['as' => 'place_types.store',    'uses' => 'PlaceTypesController@store']);
+        Route::get('/{id}/destroy', ['as' => 'place_types.destroy',  'uses' => 'PlaceTypesController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'place_types.edit',     'uses' => 'PlaceTypesController@edit']);
+        Route::put('/{id}/update',  ['as' => 'place_types.update',   'uses' => 'PlaceTypesController@update']);
     });
 
     // TicketTypes
