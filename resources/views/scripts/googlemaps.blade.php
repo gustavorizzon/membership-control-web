@@ -5,10 +5,10 @@
 		var latitude = document.querySelector('input[name=latitude]');
 		var longitude = document.querySelector('input[name=longitude]');
 		function initGoogleMapsComponents() {
-			let latLng = {
-				lat: parseInt(latitude.value),
-				lng: parseInt(longitude.value)
-			};
+			let latLng = new google.maps.LatLng(
+				parseFloat(latitude.value),
+				parseFloat(longitude.value)
+			);
 
 			// Map canvas
 			gmMap = new google.maps.Map(document.getElementById('map'), {
