@@ -23,10 +23,16 @@ class AttractionRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required',
+        $rules = [
+            'name' => 'required|unique:attractions,name',
             'description' => 'required|min:10',
             'attraction_type_id' => 'required|exists:attraction_types,id',
         ];
+
+        if ($this->method() === self::METHOD_PUT) {
+            $rules['name'] .= ',' . $this->id;
+        }
+
+        return $rules;
     }
 }
