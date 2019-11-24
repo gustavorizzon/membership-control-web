@@ -44,7 +44,7 @@
 											<tr>
 												<td class="text-center">{{ $place_type->id }}</td>
 												<td>{{ $place_type->name }}</td>
-												<td>{{ $place_type->description }}</td>
+												<td>{{ Str::limit($place_type->description, 50) }}</td>
 												<td class="text-center">
 													<a href="{{ route('place_types.edit', ['id' => $place_type->id]) }}" class="btn-sm btn-warning fas fa-edit" title="{{ __('Edit') }}"></a>
 													<a href="#" class="btn-sm btn-danger fas fa-trash" onclick="return confirmDeletion({{ $place_type->id }});" title="{{ __('Delete') }}"></a>

@@ -19,7 +19,7 @@
 							{!! Form::open(['route' => ["attraction_types.update", $attraction_type->id], 'method' => 'put']) !!}
 							
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-xs-12">
 									<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 										{!! Form::label('name', __('Name'), ['class' => 'control-label']) !!}
 										{!! Form::text('name', $attraction_type->name, [
@@ -29,12 +29,14 @@
 										{!! $errors->first('name', '<p class="help-block">* :message</p>') !!}
 									</div>
 								</div>
-								<div class="col-sm-6">
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
 									<div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
 										{!! Form::label('description', __('Description'), ['class' => 'control-label']) !!}
-										{!! Form::text('description', $attraction_type->description, [
+										{!! Form::textarea('description', $attraction_type->description, [
 											'class'		=> 'form-control',
-											// 'required'
+											'required'
 										]) !!}
 										{!! $errors->first('description', '<p class="help-block">* :message</p>') !!}
 									</div>

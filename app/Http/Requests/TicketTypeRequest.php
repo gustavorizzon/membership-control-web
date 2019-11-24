@@ -23,9 +23,15 @@ class TicketTypeRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required',
+        $rules = [
+            'name' => 'required|unique:ticket_types,name',
             'description' => 'required|min:10',
         ];
+
+        if ($this->method() === self::METHOD_PUT) {
+            $rules['name'] .= ',' . $this->id;
+        }
+
+        return $rules;
     }
 }
