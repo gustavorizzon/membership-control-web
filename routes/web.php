@@ -63,6 +63,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/{id}/update',  ['as' => 'attraction_types.update',   'uses' => 'AttractionTypesController@update']);
     });
 
+    // Places
+    Route::group(['prefix' => 'places', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('',              ['as' => 'places',          'uses' => 'PlacesController@index']);
+        Route::get('/create',       ['as' => 'places.create',   'uses' => 'PlacesController@create']);
+        Route::post('/store',       ['as' => 'places.store',    'uses' => 'PlacesController@store']);
+        Route::get('/{id}/destroy', ['as' => 'places.destroy',  'uses' => 'PlacesController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'places.edit',     'uses' => 'PlacesController@edit']);
+        Route::put('/{id}/update',  ['as' => 'places.update',   'uses' => 'PlacesController@update']);
+    });
+
     // PlaceTypes
     Route::group(['prefix' => 'place_types', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'place_types',          'uses' => 'PlaceTypesController@index']);

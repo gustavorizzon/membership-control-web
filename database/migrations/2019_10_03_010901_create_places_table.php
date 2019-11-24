@@ -21,7 +21,7 @@ class CreatePlacesTable extends Migration
             
             $table->integer('capacity');
             
-            $table->string('latitute');
+            $table->string('latitude');
             $table->string('longitude');
 
             // Place Type Reference
