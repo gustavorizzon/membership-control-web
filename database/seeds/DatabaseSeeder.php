@@ -15,9 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call(AssociatesTableSeeder::class);
         
         $this->call(TicketTypesTableSeeder::class);
-        $this->call(PlaceTypesTableSeeder::class);
-        $this->call(AttractionTypesTableSeeder::class);
 
-        $this->class(AttractionsTableSeeder::class);
+        $this->call(PlaceTypesTableSeeder::class);
+        $this->call(PlacesTableSeeder::class);
+
+        $this->call(AttractionTypesTableSeeder::class);
+        $this->call(AttractionsTableSeeder::class);
     }
 }
