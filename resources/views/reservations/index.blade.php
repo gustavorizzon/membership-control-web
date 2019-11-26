@@ -54,7 +54,7 @@
 												<td>{{ $reservation->reservedBy->name }}</td>
 												<td>{{ $reservation->guests()->count() }}</td>
 												<td class="text-center">
-													{{-- <a href="{{ route('reservation_guests', ['id' => $reservation->id]) }}" class="btn-sm btn-info fas fa-user" title="{{ __('Guests') }}"></a> --}}
+													<a href="{{ route('reservation_guests', ['id' => $reservation->id]) }}" class="btn-sm btn-info fas fa-user" title="{{ __('Guests') }}"></a>
 													<a href="{{ route('reservations.edit', ['id' => $reservation->id]) }}" class="btn-sm btn-warning fas fa-edit" title="{{ __('Edit') }}"></a>
 													<a href="#" class="btn-sm btn-danger fas fa-trash" onclick="return confirmDeletion({{ $reservation->id }});" title="{{ __('Delete') }}"></a>
 												</td>
