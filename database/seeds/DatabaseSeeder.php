@@ -14,12 +14,14 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(AssociatesTableSeeder::class);
         
-        $this->call(TicketTypesTableSeeder::class);
-
         $this->call(PlaceTypesTableSeeder::class);
         $this->call(PlacesTableSeeder::class);
-
+        
         $this->call(AttractionTypesTableSeeder::class);
         $this->call(AttractionsTableSeeder::class);
+
+        $this->call(ReservationsTableSeeder::class);
+        
+        $this->call(TicketTypesTableSeeder::class);
     }
 }
