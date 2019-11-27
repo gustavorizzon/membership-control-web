@@ -39,7 +39,7 @@
 								<tbody>
 									@if($users->isEmpty())
 										<tr>
-											<td colspan="8" class="text-center">@lang('messages.table.empty')</td>
+											<td colspan="6" class="text-center">@lang('messages.table.empty')</td>
 										</tr>
 									@else
 										@foreach ($users as $user)

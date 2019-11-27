@@ -37,7 +37,7 @@
 								<tbody>
 									@if($ticket_types->isEmpty())
 										<tr>
-											<td colspan="8" class="text-center">@lang('messages.table.empty')</td>
+											<td colspan="4" class="text-center">@lang('messages.table.empty')</td>
 										</tr>
 									@else
 										@foreach ($ticket_types as $ticket_type)

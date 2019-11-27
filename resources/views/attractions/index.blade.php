@@ -38,7 +38,7 @@
 								<tbody>
 									@if($attractions->isEmpty())
 										<tr>
-											<td colspan="8" class="text-center">@lang('messages.table.empty')</td>
+											<td colspan="5" class="text-center">@lang('messages.table.empty')</td>
 										</tr>
 									@else
 										@foreach ($attractions as $attraction)

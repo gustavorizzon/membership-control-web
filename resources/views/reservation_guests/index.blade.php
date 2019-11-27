@@ -40,7 +40,7 @@
 								<tbody>
 									@if($reservation_guests->isEmpty())
 										<tr>
-											<td colspan="8" class="text-center">@lang('messages.table.empty')</td>
+											<td colspan="3" class="text-center">@lang('messages.table.empty')</td>
 										</tr>
 									@else
 										@foreach ($reservation_guests as $reservation_guest)
