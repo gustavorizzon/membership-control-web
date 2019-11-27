@@ -111,7 +111,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/{id}/update',  ['as' => 'reservation_guests.update',   'uses' => 'ReservationGuestsController@update']);
     });
 
-    // Reservations
+    // Events
     Route::group(['prefix' => 'events', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'events',          'uses' => 'EventsController@index']);
         Route::get('/create',       ['as' => 'events.create',   'uses' => 'EventsController@create']);
@@ -119,6 +119,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/{id}/destroy', ['as' => 'events.destroy',  'uses' => 'EventsController@destroy']);
         Route::get('/{id}/edit',    ['as' => 'events.edit',     'uses' => 'EventsController@edit']);
         Route::put('/{id}/update',  ['as' => 'events.update',   'uses' => 'EventsController@update']);
+    });
+
+    // Event Tickets
+    Route::group(['prefix' => 'event_tickets', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('/{id}',         ['as' => 'event_tickets',          'uses' => 'EventTicketsController@index']);
+        Route::get('/{id}/create',  ['as' => 'event_tickets.create',   'uses' => 'EventTicketsController@create']);
+        Route::post('/store',       ['as' => 'event_tickets.store',    'uses' => 'EventTicketsController@store']);
+        Route::get('/{id}/destroy', ['as' => 'event_tickets.destroy',  'uses' => 'EventTicketsController@destroy']);
     });
 
     // TicketTypes

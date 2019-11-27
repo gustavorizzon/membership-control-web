@@ -56,9 +56,9 @@
 												<td>{{ $event->reservation->from }}</td>
 												<td>{{ $event->reservation->to }}</td>
 												<td class="text-center">
-													{{-- @if ($event->reservation->guests()->count() == 0)
+													@if ($event->is_public)
 														<a href="{{ route('event_tickets', ['id' => $event->id]) }}" class="btn-sm btn-info fas fa-user" title="{{ __('Guests') }}"></a>
-													@endif --}}
+													@endif
 													<a href="{{ route('events.edit', ['id' => $event->id]) }}" class="btn-sm btn-warning fas fa-edit" title="{{ __('Edit') }}"></a>
 													<a href="#" class="btn-sm btn-danger fas fa-trash" onclick="return confirmDeletion({{ $event->id }});" title="{{ __('Delete') }}"></a>
 												</td>
