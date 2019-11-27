@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dependent extends Model
 {
+    protected $fillable = ['holder_id', 'dependent_id'];
+
     /**
      * Returns the holder instance
      * 
@@ -13,7 +15,7 @@ class Dependent extends Model
      */
     public function holder()
     {
-        return $this->hasOne('App\Associate', 'holder_id');
+        return $this->belongsTo('App\Associate', 'holder_id');
     }
 
     /**
@@ -23,6 +25,6 @@ class Dependent extends Model
      */
     public function dependent()
     {
-        return $this->hasOne('App\Associate', 'dependent_id');
+        return $this->belongsTo('App\Associate', 'dependent_id');
     }
 }

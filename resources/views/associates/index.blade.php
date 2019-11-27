@@ -54,6 +54,9 @@
 												<td class="text-center">{{ $associate->is_holder ? __('Yes') : __('No') }}</td>
 												<td class="text-center">{{ $associate->is_active ? __('Yes') : __('No') }}</td>
 												<td class="text-center">
+													@if ($associate->is_holder)
+														<a href="{{ route('dependents', ['id' => $associate->id]) }}" class="btn-sm btn-info fas fa-users" title="{{ __('Dependents') }}"></a>
+													@endif
 													<a href="{{ route('associates.edit', ['id' => $associate->id]) }}" class="btn-sm btn-warning fas fa-edit" title="{{ __('Edit') }}"></a>
 													<a href="#" class="btn-sm btn-danger fas fa-trash" onclick="return confirmDeletion({{ $associate->id }});" title="{{ __('Delete') }}"></a>
 												</td>

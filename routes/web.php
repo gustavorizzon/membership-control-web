@@ -43,6 +43,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/{id}/update',  ['as' => 'associates.update',   'uses' => 'AssociatesController@update']);
     });
 
+    // Dependents
+    Route::group(['prefix' => 'dependents', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('/{id}',         ['as' => 'dependents',          'uses' => 'DependentsController@index']);
+        Route::get('/{id}/create',  ['as' => 'dependents.create',   'uses' => 'DependentsController@create']);
+        Route::post('/store',       ['as' => 'dependents.store',    'uses' => 'DependentsController@store']);
+        Route::get('/{id}/destroy', ['as' => 'dependents.destroy',  'uses' => 'DependentsController@destroy']);
+    });
+
     // Attractions
     Route::group(['prefix' => 'attractions', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'attractions',          'uses' => 'AttractionsController@index']);
