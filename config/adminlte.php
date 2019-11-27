@@ -151,12 +151,6 @@ return [
             // 'can'   => 'list-associates',
         ],
         [
-            'text'  => 'Dependents',
-            'url'   => 'dependents',
-            'icon'  => 'fas fa-fw fa-user-friends',
-            // 'can'   => 'list-dependents',
-        ],
-        [
             'text' => 'Attractions',
             'url' => '#',
             'icon' => 'fas fa-fw fa-fire-alt',
