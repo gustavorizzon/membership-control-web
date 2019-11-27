@@ -103,6 +103,16 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('/{id}/update',  ['as' => 'reservation_guests.update',   'uses' => 'ReservationGuestsController@update']);
     });
 
+    // Reservations
+    Route::group(['prefix' => 'events', 'where' => ['id' => '[0-9]+']], function () {
+        Route::any('',              ['as' => 'events',          'uses' => 'EventsController@index']);
+        Route::get('/create',       ['as' => 'events.create',   'uses' => 'EventsController@create']);
+        Route::post('/store',       ['as' => 'events.store',    'uses' => 'EventsController@store']);
+        Route::get('/{id}/destroy', ['as' => 'events.destroy',  'uses' => 'EventsController@destroy']);
+        Route::get('/{id}/edit',    ['as' => 'events.edit',     'uses' => 'EventsController@edit']);
+        Route::put('/{id}/update',  ['as' => 'events.update',   'uses' => 'EventsController@update']);
+    });
+
     // TicketTypes
     Route::group(['prefix' => 'ticket_types', 'where' => ['id' => '[0-9]+']], function () {
         Route::any('',              ['as' => 'ticket_types',          'uses' => 'TicketTypesController@index']);
