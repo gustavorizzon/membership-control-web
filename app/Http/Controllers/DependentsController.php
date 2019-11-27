@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Associate;
 use App\Http\Requests\DependentRequest;
 use App\Dependent;
 use Illuminate\Http\Request;
@@ -12,6 +13,12 @@ class DependentsController extends Controller
 	 * Returns the index view of the Dependents.
 	 */
     public function index($id) {
+		// Checking if the given id is a holder id
+		if (!Associate::find($id)->is_holder) {
+			return redirect()->back();
+		}
+
+		// Return the dependents index for the holder
 		$dependents = Dependent::where('holder_id', $id)->get();
 		return view('dependents.index', [
             'dependents' => $dependents,
