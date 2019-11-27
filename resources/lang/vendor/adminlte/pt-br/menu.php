@@ -16,4 +16,13 @@ return [
     'Important'                     => 'Importante',
     'Warning'                       => 'Aviso',
     'Information'                   => 'Informação',
+    'Associates'                    => 'Associados',
+    'Attractions'                   => 'Atrações',
+    'attraction_types'              => 'Tipos de Atração',
+    'Places'                        => 'Lugares',
+    'place_types'                   => 'Tipos de Lugar',
+    'Reservations'                  => 'Reservas',
+    'Events'                        => 'Eventos',
+    'ticket_types'                  => 'Tipos de Ingresso',
+    'Users'                         => 'Usuários'
 ];

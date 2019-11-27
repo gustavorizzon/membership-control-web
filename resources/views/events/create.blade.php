@@ -60,8 +60,8 @@
 												\App\Reservation::all()->pluck('id', 'id')->transform(function ($id, $key) {
 													$reservation = \App\Reservation::find($id);
 													return $reservation->id
-														. ' - At: ' . $reservation->place->name
-														. ' - To: ' . $reservation->reservedTo->name;
+														. ' - ' . __('At') . ': ' . $reservation->place->name
+														. ' - ' . __('To') . ': ' . $reservation->reservedTo->name;
 												})->toArray(), null,
 												['class' => 'form-control']
 											) !!}

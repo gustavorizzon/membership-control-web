@@ -61,7 +61,7 @@
 								<div class="col-sm-4 col-md-3">
 									<div class="form-group {{ $errors->has('locale') ? 'has-error' : '' }}">
 										{!! Form::label('locale', __('Locale'), ['class' => 'control-label']) !!}
-										{!! Form::select('locale', ['en' => 'English'], null, [
+										{!! Form::select('locale', ['en' => 'English', 'pt-br' => 'Português (Brasil)'], null, [
 											'class' 	=> 'form-control',
 											'required'
 										]) !!}

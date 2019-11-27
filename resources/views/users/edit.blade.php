@@ -11,7 +11,7 @@
 		<div class="col-xs-12">
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">{{ __('Editting user: ') . $user->name }}</h3>
+					<h3 class="box-title">{{ __('Editing user') . ': ' . $user->name }}</h3>
 				</div>
 				<div class="box-body">
 					<div class="row">
@@ -61,7 +61,7 @@
 								<div class="col-sm-4 col-md-3">
 									<div class="form-group {{ $errors->has('locale') ? 'has-error' : '' }}">
 										{!! Form::label('locale', __('Locale'), ['class' => 'control-label']) !!}
-										{!! Form::select('locale', ['en' => 'English'], $user->locale, [
+										{!! Form::select('locale', ['en' => 'English', 'pt-br' => 'Português (Brasil)'], $user->locale, [
 											'class' 	=> 'form-control',
 											'required'
 										]) !!}

@@ -11,7 +11,7 @@
 		<div class="col-xs-12">
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">{{ __('Editting Ticket Type: ') . $ticket_type->name }}</h3>
+					<h3 class="box-title">{{ __('Editing ticket type') . ': ' . $ticket_type->name }}</h3>
 				</div>
 				<div class="box-body">
 					<div class="row">

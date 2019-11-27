@@ -11,7 +11,7 @@
 		<div class="col-xs-12">
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">{{ __('Events Form') }}</h3>
+					<h3 class="box-title">{{ __('Editing event') . ': ' . $event->name }}</h3>
 				</div>
 				<div class="box-body">
 					<div class="row">
@@ -60,8 +60,8 @@
 												\App\Reservation::all()->pluck('id', 'id')->transform(function ($id, $key) {
 													$reservation = \App\Reservation::find($id);
 													return $reservation->id
-														. ' - At: ' . $reservation->place->name
-														. ' - To: ' . $reservation->reservedTo->name;
+														. ' - ' . __('At') . ': ' . $reservation->place->name
+														. ' - ' . __('To') . ': ' . $reservation->reservedTo->name;
 												})->toArray(), $event->reservation_id,
 												['class' => 'form-control']
 											) !!}

@@ -206,14 +206,6 @@ return [
             'icon' => 'fas fa-fw fa-ticket-alt',
             // 'can' => 'list-ticket-types',
         ],
-
-        // Account related links
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ]
     ],
 
     /*
