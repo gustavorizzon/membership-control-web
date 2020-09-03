@@ -26,7 +26,7 @@ class ChangeIsActiveDefaultValueFromAssociatesTable extends Migration
     public function down()
     {
         Schema::table('associates', function (Blueprint $table) {
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(true)->change();
         });
     }
 }

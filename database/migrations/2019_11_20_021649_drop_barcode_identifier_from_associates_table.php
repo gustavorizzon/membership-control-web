@@ -26,7 +26,7 @@ class DropBarcodeIdentifierFromAssociatesTable extends Migration
     public function down()
     {
         Schema::table('associates', function (Blueprint $table) {
-            $table->uuid('barcode_identifier')->unique();
+            $table->uuid('barcode_identifier')->unique()->nullable();
         });
     }
 }
